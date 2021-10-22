@@ -45,7 +45,7 @@ let menu=[
         title: "Onigiri",
         category:"japan",
         price: 9.99 ,
-        img: "https://www.asianfoodlovers.com/media/catalog/product/cache/8/image/750x750/9df78eab33525d08d6e5fb8d27136e95/o/n/onigiri.jpg",
+        img: "https://i0.wp.com/coupleeatsfood.com/wp-content/uploads/2017/04/Tuna-Mayo-Onigiri-Japanese-Rice-Balls.jpg?fit=1080%2C1077",
         derc:"Rice Sandwich, serving with soy sauce"
     },
     {
@@ -60,7 +60,7 @@ let menu=[
         title: "Ma Yi Shang Shu",
         category:"china",
         price: 12.99,
-        img: "Hot pepper sauce noodle, serving with soy bean and onion",
+        img: "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/F688C2F6-86EC-46C4-B9C7-A6BA01DF7437/Derivates/32E3E72A-F786-406D-AF7F-B30980A9AC6C.jpg",
         derc:"Hot pepper sauce noodle, serving with soy bean and onion"
     },
      {
@@ -70,5 +70,76 @@ let menu=[
         price: 3.99,
         img: "https://www.pratikevyemekleri.com/wp-content/uploads/2021/03/Dorayaki-tarifi.jpg",
         derc:"Red bean paste dessert, serving with honey."
+    },
+];
+
+const section = document.querySelector(".section-center");
+const btnContainer = document.querySelector(".btn-container");
+
+const categories = menu.reduce(
+  (values, item) => {
+    if (!values.includes(item.category)) {
+      values.push(item.category);
     }
-]
+    return values;
+  },
+  ["All"]
+);
+
+const categoryList = () => {
+  const categoryBtns = categories
+    .map((category) => {
+      return `<button class="btn btn-outline-dark btn-item" data-id=${category}>${category}</button>`;
+    })
+    .join("");
+
+  btnContainer.innerHTML = categoryBtns;
+  const filterBtns = document.querySelectorAll(".btn-item");
+
+  //filter menu
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const category = e.currentTarget.dataset.id;
+      console.log(category);
+      const menuCategory = menu.filter((menuItem) => {
+        if (menuItem.category === category) {
+          return menuItem;
+        }
+      });
+      if (category === "All") {
+        menuList(menu);
+      } else {
+        menuList(menuCategory);
+      }
+    });
+  });
+};
+
+const menuList = (menuItems) => {
+  let displayMenu = menuItems.map((item) => {
+    return `<div class="menu-items col-lg-6 col-sm-12">
+            <img
+              src=${item.img}
+              alt=${item.title}
+              class="photo"
+            />
+            <div class="menu-info">
+              <div class="menu-title">
+                <h4>${item.title}</h4>
+                <h4 class="price">${item.price}</h4>
+              </div>
+              <div class="menu-text">
+                ${item.desc}
+              </div>
+            </div>
+          </div>
+    `;
+  });
+  displayMenu = displayMenu.join("");
+  section.innerHTML = displayMenu;
+};
+
+menuList(menu);
+categoryList();
+
+

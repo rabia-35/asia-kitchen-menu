@@ -21,21 +21,124 @@
   </head>
   <body>
     <div class="container">
+    
       <section class="menu">
         <!-- title -->
         <div class="title">
           <h2>Asian Kitchen's Menu</h2>
         </div>
         <!-- filter buttons-->
-        <div class="btn-container"></div>
+        <div class="btn-container" onclick="getMenu()">
+          <button id="allid" class="btn-item btn btn-secondary">All</button>
+          <button id="koreaid" class="btn-item btn btn-secondary" target="_blank" >Korea</button>
+          <button id="japanid" class="btn-item btn btn-secondary">Japan</button>
+          <button id="chinaid" class="btn-item btn btn-secondary">China</button>
+
+        </div>
         <!-- menu items -->
         <div class="section-center row">
-          <!-- single-item -->
+          
+          <div id="tteok" class="menu-items col-lg-6 col-sm-12 ">
+            <img src="https://twoplaidaprons.com/wp-content/uploads/2020/09/tteokbokki-top-down-view-of-tteokbokki-in-a-bowl.jpg " alt="Tteokbokki" class="photo ">
+            <div class="menu-info">
+              <div class="menu-title">
+                   <h4 >Tteokbokki</h4>
+                   <h4 class="price">10.99</h4>
+              </div>
+              <p class="menu-text">Spicy rice cakes, serving with fish cake. </p>
+            </div>
+          </div>
+<!--  
+          <div id="chick" class="menu-items col-lg-6 col-sm-12 ">
+            <img src="https://www.kitchensanctuary.com/wp-content/uploads/2020/12/Quick-Chicken-Ramen-square-FS-22-500x500.jpg" alt="Chicken Ramen" class="photo ">
+              <div class="menu-info">
+                <div class="menu-title">
+                   <h4 > Chicken Ramen</h4>
+                   <h4 class="price">7.99 </h4>
+                </div>
+                <p class="menu-text"> Chicken noodle soup, serving with vegetables such as soy bean, green onion. In an optional you can ask for egg. </p>
+              </div>
+          </div>
 
-          <!-- end of single item -->
-        </div>
+          
+          <div id="bibim" class="menu-items col-lg-6 col-sm-12">
+            <img src="https://i.lezzet.com.tr/images-xxlarge-recipe/bibimbap-2d68e268-6c19-4ff8-b5f8-1145372450cf.jpg" alt="bibimbap" class="photo ">
+               <div class="menu-info">
+                  <div class="menu-title">
+                      <h4 >Bibimbap</h4>
+                      <h4 class="price">8.99</h4>
+                  </div>
+                <p class="menu-text">Boiling vegetables, serving with special hot sauce </p>
+                </div>
+          </div>  
+
+          <div id="danda" class="menu-items col-lg-6 col-sm-12 ">
+            <img src="https://i2.wp.com/seonkyounglongest.com/wp-content/uploads/2019/10/Dan-Dan-Noodles-11.jpg?fit=2000%2C1333&ssl=1" alt="Dan Dan Mian" class="photo ">
+              <div class="menu-info">
+                  <div class="menu-title">
+                   <h4 >Dan Dan Mian </h4>
+                   <h4 class="price">5.99 </h4>
+                  </div>
+                <p class="menu-text"> Dan dan noodle, serving with green onion </p>
+              </div>
+          </div>
+
+          <div id="yangz" class="menu-items col-lg-6 col-sm-12 ">
+            <img src="https://www.chinayummyfood.com/wp-content/uploads/2019/09/Yang-Chow-Fried-Rice-500x500.jpg" alt=" Yangzhou Fried rice" class="photo ">
+              <div class="menu-info">
+                  <div class="menu-title">
+                   <h4 > Yangzhou Fried Rice </h4>
+                   <h4 class="price"> 12.99</h4>
+                  </div>
+                <p class="menu-text"> Yangzhou style fried rice, serving with bean and pickles </p>
+              </div>
+          </div>
+          <div id="onigi" class="menu-items col-lg-6 col-sm-12 ">
+            <img src="https://i0.wp.com/coupleeatsfood.com/wp-content/uploads/2017/04/Tuna-Mayo-Onigiri-Japanese-Rice-Balls.jpg?fit=1080%2C1077" alt="Onigiri" class="photo ">
+              <div class="menu-info">
+                  <div class="menu-title">
+                   <h4 > Onigiri</h4>
+                   <h4 class="price">9.99 </h4>
+                  </div>
+                <p class="menu-text"> Rice Sandwich, serving with soy sauce </p>
+              </div>
+          </div>
+          <div id="jajan" class="menu-items col-lg-6 col-sm-12">
+            <img src="https://www.curiouscuisiniere.com/wp-content/uploads/2020/04/Jajangmyeon-Korean-Noodles-in-Black-Bean-Sauce5.1200H-735x613.jpg " alt="Jajangmyeon" class="photo ">
+            <div class="menu-info">
+                <div class="menu-title">
+                   <h4 >Jajangmyeon</h4>
+                   <h4 class="price">15.99</h4>
+                </div>
+              <p class="menu-text">Black bean sauce noodle, serving with green onion </p>
+            </div>
+          </div>
+
+          <div id="mayis" class="menu-items col-lg-6 col-sm-12 ">
+            <img src="https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/F688C2F6-86EC-46C4-B9C7-A6BA01DF7437/Derivates/32E3E72A-F786-406D-AF7F-B30980A9AC6C.jpg" alt="ma yi shang shu" class="photo ">
+              <div class="menu-info">
+                  <div class="menu-title">
+                   <h4 >Ma Yi Shang Shu </h4>
+                   <h4 class="price">12.99 </h4>
+                  </div>
+                <p class="menu-text"> Hot pepper sauce noodle, serving with soy bean and onion </p>
+              </div>
+          </div>
+          
+          <div id="doroy" class="menu-items col-lg-6 col-sm-12 ">
+            <img src="https://www.pratikevyemekleri.com/wp-content/uploads/2021/03/Dorayaki-tarifi.jpg" alt="Doroyaki" class="photo ">
+              <div class="menu-info">
+                  <div class="menu-title">
+                   <h4 > Doroyaki </h4>
+                   <h4 class="price">3.99 </h4>
+                  </div>
+                <p class="menu-text">Red bean paste dessert, serving with honey  </p>
+              </div>
+          </div>
+          
+        -->
       </section>
     </div>
-
+    <script src="asian.js"></script>
   </body>
 </html>
