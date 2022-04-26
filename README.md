@@ -1,2 +1,7 @@
-# js-odev3
-Patika.dev JavaScript Ödev-3
+# Asia Kitchen Menu 
+---
+This project was recreated by me
+* HTML
+* CSS
+* Javascript
+* Bootstarp
